@@ -5,8 +5,8 @@ export default function Hero() {
   const loop = [...industries.map((industry) => industry.name), "Web Design", "Mobile Apps", "UI/UX", "Custom Software"];
   return (
     <section id="home" className="relative overflow-hidden bg-black pt-[88px]">
-      <img src="/hero.jpg" alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 size-full object-contain object-center" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-linear-to-r from-black/85 via-black/65 to-black/40" />
+      <img src="/hero.jpg" alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 size-full object-cover object-center md:object-contain" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/75 via-black/65 to-black/85 md:bg-linear-to-r md:from-black/85 md:via-black/65 md:to-black/40" />
 
       <div className={`${wrap} relative py-16 lg:py-24`}>
         <div className="max-w-4xl animate-fade-up">

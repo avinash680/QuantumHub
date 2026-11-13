@@ -240,6 +240,7 @@ export const team = [
     name: "Aman Thakur",
     role: "digital Market developer",
     initials: "SN",
+    
     photo: "/Aman%20thakur.jpeg",
     bio: "Keeps each engagement aligned, structured, and focused on measurable business outcomes.",
   },
