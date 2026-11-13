@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #04060b;
+  --color-panel: #0a0f1a;
+  --color-line: #1b2435;
+  --color-soft: #c5cee0;
+  --color-muted: #8e9ab2;
+  --color-qcyan: #2fc0ff;
+  --color-qviolet: #8a63ff;
+  --font-head: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+
+  --animate-orbit-a: orbit 18s linear infinite;
+  --animate-orbit-b: orbit 12s linear infinite reverse;
+  --animate-orbit-c: orbit 8s linear infinite;
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-fade-up: fade-up .8s ease-out both;
+  @keyframes orbit { to { transform: rotate(360deg); } }
+  @keyframes float { 50% { transform: translate3d(0, -28px, 0) scale(1.06); } }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(22px); } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body { @apply bg-ink text-slate-100 font-body text-[1.05rem] leading-relaxed antialiased overflow-x-hidden; }
+  h1, h2, h3 { @apply font-head tracking-tight leading-[1.08]; }
+  ::selection { background: rgba(138, 99, 255, .45); }
+  :focus-visible { outline: 2px solid var(--color-qcyan); outline-offset: 3px; border-radius: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
