@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Hero from "./sections/Hero.jsx";
-import { Services, Why, Process } from "./sections/Content.jsx";
+import { Services, Team, Why, Process } from "./sections/Content.jsx";
 import Blog from "./sections/Blog.jsx";
 import Contact from "./sections/Contact.jsx";
 import { useActiveSection } from "./hooks.jsx";
@@ -14,6 +14,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <Team />
         <Why />
         <Process />
         <Blog />

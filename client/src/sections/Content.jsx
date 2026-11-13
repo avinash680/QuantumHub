@@ -1,5 +1,5 @@
 import { Reveal } from "../hooks.jsx";
-import { services, industries, why, process } from "../content.js";
+import { services, industries, why, process, team } from "../content.js";
 import { wrap, card, h2, lead, gradText } from "../ui.js";
 
 const icons = [
@@ -37,6 +37,46 @@ export function Services() {
         <span className="text-muted">Industries we serve:</span>
         {industries.map((industry) => <span key={industry.slug} className="rounded-full border border-white/10 px-4 py-1.5 text-sm text-soft">{industry.name}</span>)}
       </Reveal>
+    </section>
+  );
+}
+
+export function Team() {
+  return (
+    <section id="team" className="border-y border-white/10 bg-panel">
+      <div className={`${wrap} py-20 lg:py-28`}>
+        <Reveal>
+          <h2 className={`${h2} mb-4`}>Meet our <span className={gradText}>team</span></h2>
+          <p className={`${lead} mb-12`}>A tightly connected group of strategists, designers, and developers working together to shape digital experiences that move businesses forward.</p>
+        </Reveal>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {team.map((member, i) => (
+            <Reveal key={member.name} delay={i * 100}>
+              <article className={`${card} h-full overflow-hidden`}>
+                <div className="relative grid aspect-[4/3] place-items-center overflow-hidden border-b border-white/10 bg-linear-to-br from-qcyan/10 via-white/[0.03] to-qviolet/15">
+                  {member.photo ? (
+                    <img src={member.photo} alt={member.name} className="absolute inset-0 size-full object-cover object-center" />
+                  ) : (
+                    <>
+                      <svg aria-hidden="true" viewBox="0 0 24 24" className="absolute size-24 text-white/[0.08]" fill="none" stroke="currentColor" strokeWidth="1">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 21a8 8 0 0 1 16 0" />
+                      </svg>
+                      <span className="relative font-head text-4xl font-bold tracking-widest text-white/70">{member.initials}</span>
+                    </>
+                  )}
+                  <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-black/20 px-2.5 py-1 text-[0.72rem] uppercase tracking-[0.18em] text-soft backdrop-blur">Team</span>
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-bold">{member.name}</h3>
+                  <p className="mb-3 text-sm font-medium text-qcyan">{member.role}</p>
+                  <p className="text-muted">{member.bio}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

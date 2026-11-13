@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "./Logo.jsx";
 import { btn } from "../ui.js";
 
-const links = [["services", "Services"], ["why", "Why us"], ["process", "Process"], ["blog", "Blog"], ["contact", "Contact"]];
+const links = [["home", "Home"], ["services", "Services"], ["why", "Why us"], ["process", "Process"], ["blog", "Blog"], ["contact", "Contact"]];
 
 export default function Navbar({ active }) {
   const [open, setOpen] = useState(false);
